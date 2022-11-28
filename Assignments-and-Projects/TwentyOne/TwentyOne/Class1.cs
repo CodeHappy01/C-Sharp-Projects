@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace TwentyOne
 {
-    class Class1
+    public class Card
     {
+        //Constructor for default values
+        public Card()
+        {
+            Suit = "Spades";
+            Face = "Two";              
+        }
+        //Public Properties that you can get or set
+        public string Suit { get; set; }
+        public string Face { get; set; }
     }
 }
