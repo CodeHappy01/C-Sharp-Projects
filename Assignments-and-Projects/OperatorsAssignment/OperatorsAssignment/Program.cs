@@ -10,11 +10,15 @@ namespace OperatorsAssignment
     {
         static void Main(string[] args)
         {
+            //Two Employee objects
             Employee employee = new Employee();
-            employee.employeeList = new List<ID>();
+            Employee employee1 = new Employee();
+            //Employee ID numbers
             employee.ID = 123;
-            game += player;
-            game -= player;
+            employee1.ID = 123;
+            //Checks if ID's are the same or not
+            Console.WriteLine("Employee ID's are the same: " + (employee == employee1));
+            Console.ReadLine();
         }
     }
 }

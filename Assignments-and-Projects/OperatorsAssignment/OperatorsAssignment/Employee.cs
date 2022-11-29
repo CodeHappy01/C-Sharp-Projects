@@ -8,20 +8,20 @@ namespace OperatorsAssignment
 {
     class Employee
     {
-        public List<int> employeeList { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
         public int ID { get; set; }
-
-        public static Employee operator== (Employee employee, Employee employee1)
+        //== Operator
+        public static bool operator== (Employee employee, Employee employee1)
         {
-            employee.employeeList.Add(employee.ID);
-            return employee;
+            //Return True if ID's are the same
+            return (employee.ID == employee1.ID);
         }
-        public static Employee operator!= (Employee employee, Employee employee1)
+        //!= Operator
+        public static bool operator!= (Employee employee, Employee employee1)
         {
-            employee.employeeList.Remove(employee.ID);
-            return employee;
+            //Return false if ID's are NOT the same
+            return (employee.ID != employee1.ID);
         }
     }
 }
