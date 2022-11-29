@@ -16,7 +16,7 @@ namespace MainMethodSubmissionAssignment
         //Second Method
         public double MyMethod(double y)
         {
-            return y + 5.5;
+            return y - 5.5;
         }
         //Third Method
         public int MyMethod(string z)
