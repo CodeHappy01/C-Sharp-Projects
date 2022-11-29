@@ -12,12 +12,13 @@ namespace PolymorphismAssignment
         {
             //Instantiated Class
             Employee employee = new Employee();
+            IQuittable quitter = new Employee();
             employee.firstName = "Sample ";
             employee.lastName = "Student";
             //Calling Method SayName()
             employee.SayName();
             //Object for Interface
-            employee.Quit("yes");
+            quitter.Quit("yes");
             Console.ReadLine();
         }
     }
