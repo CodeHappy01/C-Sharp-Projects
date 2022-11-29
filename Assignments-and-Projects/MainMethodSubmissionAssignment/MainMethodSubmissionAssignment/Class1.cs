@@ -9,14 +9,15 @@ namespace MainMethodSubmissionAssignment
     class Class1
     {
         //First Method 
-        public static int MyMethod(int x)
+        public int MyMethod(int x)
         {
             return x * 321;
         }
         //Second Method
-        public double MyMethod(double y)
+        public int MyMethod(decimal y)
         {
-            return y - 5.5;
+            int input = (int)y;
+            return input - 5;
         }
         //Third Method
         public int MyMethod(string z)

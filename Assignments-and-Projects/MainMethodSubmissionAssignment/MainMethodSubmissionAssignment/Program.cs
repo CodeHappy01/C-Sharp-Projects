@@ -15,7 +15,7 @@ namespace MainMethodSubmissionAssignment
             //First Method Variable
             int multMethod = Class1.MyMethod(123);
             //Second Method Variable
-            double subMethod = Class1.MyMethod(y: 55);
+            int subMethod = Class1.MyMethod(y: 55.5m);
             //Third Method Varible
             int addMethod = Class1.MyMethod("321");
 
