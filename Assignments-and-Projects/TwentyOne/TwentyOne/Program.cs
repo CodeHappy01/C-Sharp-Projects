@@ -11,11 +11,9 @@ namespace TwentyOne
         static void Main(string[] args)
         {
             TwentyOneGame game = new TwentyOneGame();
-            game.Players = new List<string>() { "Jesse", "Bill", "Joe" };
+            game.Players = new List<string>() { "Jesse", "Bill", "Bob" };
             game.ListPlayers();
-            game.Play();
             Console.ReadLine();
-
             //Deck deck = new Deck();
             //deck.Shuffle(3);
 
@@ -26,15 +24,8 @@ namespace TwentyOne
             //Console.WriteLine(deck.Cards.Count);
             //Console.ReadLine();
         }
-
-        
-        //public static Deck Shuffle(Deck deck, int times) 
-        //{
-        //    for (int i = 0; i < times; i++)
-        //    {
-        //        deck = Shuffle(deck);   
-        //    }
-        //    return deck;
-        //}
+        //List<Game> games = new List<Game>();
+        //TwentyOneGame game = new TwentyOneGame();
+        //games.Add(game);
     }
 }
