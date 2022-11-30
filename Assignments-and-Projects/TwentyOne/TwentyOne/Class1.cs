@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TwentyOne
 {
-    public class Card
+    public struct Card
     { 
         //Public Properties that you can get or set
         public Suit Suit { get; set; }
