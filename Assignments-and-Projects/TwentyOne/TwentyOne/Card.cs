@@ -11,6 +11,13 @@ namespace TwentyOne
         //Public Properties that you can get or set
         public Suit Suit { get; set; }
         public Face Face { get; set; }
+
+        //Classes have a built in ToString Method so we made a
+        //custom ToString method
+        public override string ToString()
+        {
+            return string.Format("{0} of {1}", Face, Suit);   
+        }
     }
     public enum Suit 
     {
