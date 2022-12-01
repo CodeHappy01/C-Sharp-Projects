@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TwentyOne
+namespace Casino.TwentyOne
 {
-    class TwentyOneRules
+    public class TwentyOneRules
     {
         //Set to Private just in case someone else wants to use
         //that same name, it will cause conflict
