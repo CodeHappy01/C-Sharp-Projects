@@ -20,6 +20,11 @@ namespace CarInsurance.Controllers
             return View(db.Insurees.ToList());
         }
 
+        public ActionResult Admin()
+        {
+            return View(db.Insurees.ToList());
+        }
+
         // GET: Insuree/Details/5
         public ActionResult Details(int? id)
         {
@@ -48,30 +53,62 @@ namespace CarInsurance.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,FirstName,LastName,EmailAddress,DateOfBirth,CarYear,CarMake,CarModel,DUI,SpeedingTickets,CoverageType,Quote")] Insuree insuree)
         {
-            Insuree insurance = new Insuree();
-
-            var insureeQuote = db.Insurees.fir;
-            var insureeDOB = insuree.DateOfBirth;
-            var insureeCarYear = insuree.CarYear;
-            var insureeCarMake = insuree.CarMake;
-            var insureeCarModel = insuree.CarModel;
-            var insureeSpeedingTicket = insuree.SpeedingTickets;
-
-            insureeQuote += 30;
-
-            //if ()
-            //{ 
-
-            //}
 
             if (ModelState.IsValid)
             {
+                insuree.Quote = calculateQuote(insuree);
                 db.Insurees.Add(insuree);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             return View(insuree);
+        }
+
+        public decimal calculateQuote(Insuree insuree)
+        {
+            decimal quote = 50;
+            int age = DateTime.Now.Year - insuree.DateOfBirth.Year;
+
+
+            if (age < 18)
+            {
+                quote += 100;    
+            }
+            if (age >=19 && age <= 25)
+            {
+                quote += 50;   
+            }
+            if (age >= 26)
+            {
+                quote += 25;
+            }
+            if (insuree.CarYear < 2000)
+            {
+                quote += 25;
+            }
+            if (insuree.CarYear > 2015)
+            {
+                quote += 25;
+            }
+            if (insuree.CarMake == "Porsche" && insuree.CarModel == "911 Carrera")
+            {
+                quote += 25;
+            }
+            if (insuree.SpeedingTickets > 0)
+            { 
+                quote += insuree.SpeedingTickets * 10;
+            }
+            if (insuree.DUI == true)
+            {
+                quote += .25m * quote;   
+            }
+            if (insuree.CoverageType == true)
+            {
+                quote += .50m * quote;
+            }
+
+            return quote;
         }
 
         // GET: Insuree/Edit/5
