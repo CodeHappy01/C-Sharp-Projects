@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+
+    <!-- Single statement block -->
+    @{
+        var myMessage = "Hello World";
+    }
+
+    <!-- Inline expression or variable -->
+    <p>The value of myMessage is: @myMessage</p>
+
+    <!-- Multi-statement block -->
+    @{
+        var greeting = "Welcome to our site!";
+        var currentDate = DateTime.Now;
+        var greetingMessage = greeting + " Here in Texas it is: " + currentDate;
+    }
+    <h2>@greetingMessage</h2>
+
+</div>
+
