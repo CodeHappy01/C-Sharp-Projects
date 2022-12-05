@@ -1,7 +1,7 @@
 # C-Sharp-Projects
 
 ## Introduction
-These are some small projects | made using C# and .NET Framework
+These are some small projects made using C# and .NET Framework
 ## Projects:
 
 * Car Insurance 
