@@ -71,7 +71,7 @@ namespace CarInsurance.Controllers
             int age = DateTime.Now.Year - insuree.DateOfBirth.Year;
 
 
-            if (age < 18)
+            if (age <= 18)
             {
                 quote += 100;    
             }
@@ -91,6 +91,11 @@ namespace CarInsurance.Controllers
             {
                 quote += 25;
             }
+            if (insuree.CarMake == "Porsche")
+            {
+                quote += 25;
+            }
+
             if (insuree.CarMake == "Porsche" && insuree.CarModel == "911 Carrera")
             {
                 quote += 25;
